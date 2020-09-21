@@ -47,6 +47,8 @@ namespace Лаба__2
             Console.WriteLine($"First {d1}");
             float e1 = a1;
             Console.WriteLine($"First {e1}");
+            double d2 = Convert.ToDouble(a1);
+            Console.WriteLine($"First {d2}");
 
             int x = 5;
             object j = x;
@@ -76,7 +78,7 @@ namespace Лаба__2
             newpath = String.Copy(path);
             Console.WriteLine($"{newpath}");
 
-            newpath = path.Substring(4,2);
+            newpath = path.Substring(4, 2);
             Console.WriteLine($"{newpath}");
 
             string[] words = path2.Split('/');
@@ -107,8 +109,65 @@ namespace Лаба__2
             Console.WriteLine(sbuild);
             sbuild.Insert(0, "A");
             Console.WriteLine(sbuild);
-            sbuild.Append(new char[] { 'h','a' });
+            sbuild.Append(new char[] { 'h', 'a' });
             Console.WriteLine(sbuild);
+
+            int[,] matrix = { { 1, 2, 3 }, { 4, 5, 6 },{ 7,8,9} };
+            for (int i0 = 0; i0 < 3; i0++)
+            {
+                for (int i1 = 0; i1 < 3; i1++)
+                    Console.Write("\t" + matrix[i0, i1]);
+                Console.WriteLine();
+            }
+
+            string[] masstr = { "Hello", "my", "little", "world" };
+            foreach (var str in masstr)
+                Console.Write("\t" + str);
+            Console.WriteLine();
+            Console.WriteLine(masstr.Length);
+            int choice = -1;
+            while (choice < 0 || choice > 3)
+            {
+                Console.Write("Введите номер позиции для замены (0-3):");
+                choice = Convert.ToInt32(Console.ReadLine());
+                if (choice < 0 || choice > 3)
+                    Console.WriteLine("Пожалуйста, введите корректно значени.");
+            }
+            Console.Write("Введите ваш текст:");
+            masstr[choice] = Console.ReadLine();
+            foreach (var str in masstr)
+                Console.Write("\t" + str);
+            Console.WriteLine();
+
+            Double[][] masfl = { new Double[2], new Double[3], new Double[4]};
+            Console.WriteLine("Введите ваши значения вещественных чисел (9 раз)");
+            int i2 = 2;
+            int index =1;
+            for (int i0 = 0; i0 < 3; i0++)
+            { 
+                for (int i1 = 0; i1 < i2; i1++)
+                {
+                    Console.Write("\t" + index + ":") ;
+                    masfl[i0][i1] = Convert.ToDouble(Console.ReadLine());
+                    index++;
+                }
+                i2++;
+                Console.WriteLine();
+            }
+            foreach (double[] masfl0 in masfl)
+            {
+                foreach (double masfl1 in masfl0)
+                    Console.Write("\t" + masfl1);
+                Console.WriteLine();
+            }
+
+            var varmas = new[] { 1, 2, 3 };
+            var varstr = "help";
+            Console.WriteLine();
+            foreach (double masfl1 in varmas)
+                Console.Write("\t" + masfl1);
+            Console.WriteLine();
+            Console.WriteLine(varstr);
         }
     }
 }
