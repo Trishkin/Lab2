@@ -62,6 +62,53 @@ namespace Лаба__2
             var x1 = 7;
             x1 = 'i';
             Console.WriteLine($"First {x1}");
+
+            String path, path1, path2;
+            path = "C:\\Windows\\regedit.exe"; //верно
+            path1 = @"C:\Windows\regedit.exe"; //верно, наиболее предпочтительно
+            path2 = "C:/Windows/regedit.exe"; //верно
+            int tru = path.CompareTo(path1);
+            Console.WriteLine($"First {tru}");
+
+            string newpath = String.Concat(path, path1, path2);
+            Console.WriteLine($"{newpath}");
+
+            newpath = String.Copy(path);
+            Console.WriteLine($"{newpath}");
+
+            newpath = path.Substring(4,2);
+            Console.WriteLine($"{newpath}");
+
+            string[] words = path2.Split('/');
+            Console.WriteLine($"{words[0]}");
+            Console.WriteLine($"{words[1]}");
+            Console.WriteLine($"{words[2]}");
+
+            newpath = path.Insert(3, "MyName\\");
+            Console.WriteLine($"It's something new - {newpath}");
+
+            newpath = newpath.Remove(3, 7);
+            Console.WriteLine(newpath);
+
+            string s1 = "";
+            string s2 = null;
+            if (string.IsNullOrEmpty(s1))
+                Console.WriteLine($"first {newpath}");
+            if (string.IsNullOrEmpty(s2))
+                Console.WriteLine($"second {newpath}");
+            if (string.IsNullOrEmpty(newpath))
+                Console.WriteLine($"ops, something wrong");
+            tru = newpath.CompareTo(s2);
+            newpath = String.Concat(s1, s2);
+
+            StringBuilder sbuild = new StringBuilder("Hello", 30);
+            Console.WriteLine(sbuild);
+            sbuild.Remove(0, 3);
+            Console.WriteLine(sbuild);
+            sbuild.Insert(0, "A");
+            Console.WriteLine(sbuild);
+            sbuild.Append(new char[] { 'h','a' });
+            Console.WriteLine(sbuild);
         }
     }
 }
