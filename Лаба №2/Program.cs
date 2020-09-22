@@ -181,14 +181,33 @@ namespace Лаба__2
             int res = Tuple.CompareTo(Tuple2);
             Console.WriteLine(res);
 
-            ValueTuple<int, int, int, char> Tuple4 = LocalFunc(new int[] {1,2,3,4}, "Boris");
-           (int, int, int, char) LocalFunc(int[] x12, string str) {
+            Console.WriteLine(LocalFunc(new int[] { 1, 2, 3, 4 }, "Boris"));
+            (int, int, int, char) LocalFunc(int[] x12, string str) {
                 ValueTuple<int, int, int, char> Tuple3 = (x12.Max(), x12.Min(), x12.Sum(),str[0]);
                 return Tuple3;
             };
-            Console.WriteLine(Tuple4);
 
-
+            LocalFunc1();
+            int LocalFunc1 ()
+            {
+                checked
+                {
+                    int chec = 2147483647;
+                    //Console.WriteLine(chec+2);            //Переполнение
+                }
+                return 0;
+            };
+            LocalFunc2();
+            int LocalFunc2() 
+            {
+                unchecked
+                {
+                    int chec = 2147483647;
+                    Console.WriteLine(chec+2);
+                }
+                return 0;
+            }
+            Console.ReadKey();
         }
     }
 }
