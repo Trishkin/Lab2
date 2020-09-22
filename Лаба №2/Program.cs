@@ -168,6 +168,18 @@ namespace Лаба__2
                 Console.Write("\t" + masfl1);
             Console.WriteLine();
             Console.WriteLine(varstr);
+
+            ValueTuple<int, string , char, string, ulong> Tuple = (18, "Dima", 'B', "Kulikov", 1218);
+            Console.WriteLine(Tuple);
+            Console.WriteLine("\t" + Tuple.Item1 + "\t" + Tuple.Item3 + "\t" + Tuple.Item4);
+            var (first, sec, _, breh, _) = Tuple;
+            Console.WriteLine(first);
+            Console.WriteLine(breh);
+            (int firi, _, char secc, string thirs, _) = Tuple;
+            (var firv, var carv, _, string srinv, _) = Tuple;
+            ValueTuple<int, string, char, string, ulong> Tuple2 = Tuple;
+            int res = Tuple.CompareTo(Tuple2);
+            Console.WriteLine(res);
         }
     }
 }
