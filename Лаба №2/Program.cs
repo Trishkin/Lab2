@@ -180,6 +180,15 @@ namespace Лаба__2
             ValueTuple<int, string, char, string, ulong> Tuple2 = Tuple;
             int res = Tuple.CompareTo(Tuple2);
             Console.WriteLine(res);
+
+            ValueTuple<int, int, int, char> Tuple4 = LocalFunc(new int[] {1,2,3,4}, "Boris");
+           (int, int, int, char) LocalFunc(int[] x12, string str) {
+                ValueTuple<int, int, int, char> Tuple3 = (x12.Max(), x12.Min(), x12.Sum(),str[0]);
+                return Tuple3;
+            };
+            Console.WriteLine(Tuple4);
+
+
         }
     }
 }
