@@ -10,31 +10,55 @@ namespace Лаба__2
     {
         static void Main(string[] args)
         {
-            sbyte sb = 1;
+            Console.WriteLine($"Write sbyte = ");
+            sbyte sb = Convert.ToSByte(Console.ReadLine());
             Console.WriteLine($"{sb}");
-            short s = 2;
+            Console.WriteLine($"Write short = ");
+            short s = (short)Convert.ToInt32(Console.ReadLine()); 
             Console.WriteLine($"{s}");
-            int i = 3;
+            Console.WriteLine($"Write int = ");
+            int i = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"{i}");
-            long l = 4;
+            Console.WriteLine($"Write long = ");
+            long l = (long)Convert.ToDouble(Console.ReadLine());
             Console.WriteLine($"{l}");
-            byte b = 5;
+            Console.WriteLine($"Write byte = ");
+            byte b = Convert.ToByte(Console.ReadLine()); ;
             Console.WriteLine($"{b}");
-            ushort us = 6;
+            Console.WriteLine($"Write ushort = ");
+            ushort us = (ushort)Convert.ToInt32(Console.ReadLine()); ;
             Console.WriteLine($"{us}");
-            uint ui = 7;
+            Console.WriteLine($"Write uint = ");
+            uint ui = Convert.ToUInt32(Console.ReadLine());
             Console.WriteLine($"{ui}");
-            ulong ul = 8;
+            Console.WriteLine($"Write ulong = ");
+            ulong ul = (ulong)Convert.ToDouble(Console.ReadLine()); 
             Console.WriteLine($"{ul}");
-            char ch = 'a';
+            Console.WriteLine($"Write char = ");
+            char ch = Console.ReadLine()[0];
             Console.WriteLine($"{ch}");
-            bool bl = true;
-            Console.WriteLine($"{bl}");
-            float fl = 9;
+            Console.WriteLine($"Write bool t or f = ");
+            char ch1 = Console.ReadLine()[0];
+            bool bl ;
+            if (ch1 == 't')
+            {
+                bl = true;
+                Console.WriteLine(bl);
+            }
+            else if (ch1 == 'f')
+            {
+                bl = false;
+                Console.WriteLine(bl);
+            }
+            else Console.WriteLine($"I don't known what is it ");
+            Console.WriteLine($"Write float = ");
+            float fl = (float)Convert.ToDouble(Console.ReadLine()); 
             Console.WriteLine($"{fl}");
-            double db = 10;
+            Console.WriteLine($"Write double = ");
+            double db = Convert.ToDouble(Console.ReadLine()); 
             Console.WriteLine($"{db}");
-            decimal dec = 11;
+            Console.WriteLine($"Write decimal = ");
+            decimal dec = Convert.ToDecimal(Console.ReadLine());
             Console.WriteLine($"{dec}");
 
             short a1 = 15;
@@ -47,6 +71,20 @@ namespace Лаба__2
             Console.WriteLine($"First {d1}");
             float e1 = a1;
             Console.WriteLine($"First {e1}");
+            decimal f1 = a1;
+            Console.WriteLine($"First {f1}");
+            short a2 = 15;
+            Console.WriteLine($"First {a2}");
+            int b2 = (int)a2;
+            Console.WriteLine($"First {b2}");
+            long c2 = (long)a2;
+            Console.WriteLine($"First {c2}");
+            double d3 = (double)a2;
+            Console.WriteLine($"First {d3}");
+            float e2 = (float)a2;
+            Console.WriteLine($"First {e2}");
+            decimal f2 = (decimal)a2;
+            Console.WriteLine($"First {f2}");
             double d2 = Convert.ToDouble(a1);
             Console.WriteLine($"First {d2}");
 
@@ -57,7 +95,7 @@ namespace Лаба__2
 
             var number = 11;
             Console.Write(number.GetType()); Console.WriteLine();
-
+            
             Nullable<int> z1 = null;
             int? z2 = null;
 
@@ -131,7 +169,7 @@ namespace Лаба__2
                 Console.Write("Введите номер позиции для замены (0-3):");
                 choice = Convert.ToInt32(Console.ReadLine());
                 if (choice < 0 || choice > 3)
-                    Console.WriteLine("Пожалуйста, введите корректно значени.");
+                    Console.WriteLine("Пожалуйста, введите корректно значение.");
             }
             Console.Write("Введите ваш текст:");
             masstr[choice] = Console.ReadLine();
